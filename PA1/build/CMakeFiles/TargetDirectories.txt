@@ -1,0 +1,3 @@
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/build/CMakeFiles/rebuild_cache.dir
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/build/CMakeFiles/edit_cache.dir
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/build/CMakeFiles/PA1-executable.dir

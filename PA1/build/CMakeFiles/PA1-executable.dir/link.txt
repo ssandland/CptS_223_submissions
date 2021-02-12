@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -g   CMakeFiles/PA1-executable.dir/main.cpp.o  -o PA1-executable 
