@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/data.hpp
+string
+-
+iostream
+-
+
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/doer.hpp
+list.hpp
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/list.hpp
+cstdlib
+-
+ctime
+-
+sstream
+-
+
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/list.hpp
+node.hpp
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/node.hpp
+fstream
+-
+
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/main.cpp
+doer.hpp
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/doer.hpp
+
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/node.hpp
+data.hpp
+/home/ss/WSUspring2021/CptS_223_submissions/PA1/data.hpp
+
