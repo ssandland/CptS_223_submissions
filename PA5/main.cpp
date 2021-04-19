@@ -6,7 +6,7 @@
 #include "ChainingHash.h"
 #include "ProbingHash.h"
 
-void testHash(Hash<int, int> *hash, std::string hashType) {
+void testHash(Hash<int, int> *hash, std::string hashType, std::fstream &outfile) {
 
     std::cout << "current size: " << hash->size() << " bucket count: " << hash->bucket_count()
               << " load factor: " << hash->load_factor() << std::endl;
@@ -19,8 +19,7 @@ void testHash(Hash<int, int> *hash, std::string hashType) {
     //std::cout << "test 3\n";
     std::chrono::steady_clock::time_point end = std::chrono::steady_clock::now();
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[ms]" << std::endl;
-    std::fstream outfile;
-    outfile.open("HashAnalysis.txt", std::ios::out); 
+ 
     outfile << "   ________________________________  \n";
     outfile << "  |    "<< hashType <<" IMPLEMENTATION   | \n";
     outfile << "  |________________________________| \n";
@@ -43,7 +42,7 @@ void testHash(Hash<int, int> *hash, std::string hashType) {
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[ms]" << std::endl;
 
     outfile << "Deleting value within key 97: " << std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count() << "[ms]\n";
-    outfile.close();
+    //outfile.close();
 
     begin = std::chrono::steady_clock::now();
     assert((*hash)[10000] == 10000);
@@ -59,10 +58,12 @@ void testHash(Hash<int, int> *hash, std::string hashType) {
 int main(int argc, char* argv[])
 {
     
-    // code for the chaining hash works just fine   
+    // code for the chaining hash works just fine 
+    std::fstream outfile;
+    outfile.open("HashAnalysis.txt", std::ios::out);  
     std::string hashType ("Chain Hash");
     ChainingHash<int, int> cHash; // = ChainingHash<int, int>();
-    testHash(&cHash, hashType);
+    testHash(&cHash, hashType, outfile);
     
     ///*
     // for some reason i can't create an object to make a new table for the rehashing 
@@ -72,6 +73,7 @@ int main(int argc, char* argv[])
     //Hash<int, int> pHash = ProbingHash<int, int>();
 
     //Hash<int, int> pHash = new ProbingHash<int, int> ();
-    testHash(&pHash, hashType); 
+    testHash(&pHash, hashType, outfile); 
+    outfile.close();
     //*/
 }

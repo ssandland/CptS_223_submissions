@@ -59,7 +59,7 @@ public:
     }
 
     V& at(const K& key) {
-        int location = findKey(key);
+        int location = key;
         if (location == this->bucketCount)
             throw std::out_of_range("Key not in the hash table");
         return this->table[location].slotData.second;
@@ -90,8 +90,7 @@ public:
         this->table[location].slotState = VALID;
         this->entryCount++;
         if (this->load_factor() >= MAX_LOAD)
-            this->rehash();
-        this->bucketCount++;
+            this->rehash(this->findNextPrime(this->bucketCount*2));
         return true;
     }
 
@@ -129,13 +128,13 @@ public:
         //std::cout << "Passed the first if statement" << std::endl;
         //ProbingHash<K, V> *newTable;
         //newTable = new ProbingHash<K, V>(n);
-        ProbingHash<int, int> newTable(n);   
+        ProbingHash<K, V> newTable(n);   
          
         // Why is this not creating a new rpobing hash object
         // this is the break point for my probing hash
         // otherwise i pretty sure it should all work as intended as long as the object can be made
         //std::cout << "New Table is made" << std::endl;
-        for(const auto &i : this->table) {
+        for(auto &i : this->table) {
             if (i.slotState == VALID) {
                 newTable.insert(std::make_pair(i.slotData.first, i.slotData.second));
                 //std::cout << " New data successfully added" << std::endl;
