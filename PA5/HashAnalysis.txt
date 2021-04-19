@@ -1,6 +1,12 @@
    ________________________________  
   |    Chain Hash IMPLEMENTATION   | 
   |________________________________| 
-Populating table: 115851[ms]
-Finding value within key 97: 2[ms]
+Populating table: 128942[ms]
+Finding value within key 97: 74[ms]
 Deleting value within key 97: 1[ms]
+   ________________________________  
+  |    linear Probing IMPLEMENTATION   | 
+  |________________________________| 
+Populating table: 39774[ms]
+Finding value within key 97: 2[ms]
+Deleting value within key 97: 0[ms]
