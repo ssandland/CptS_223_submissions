@@ -1,0 +1,6 @@
+   ________________________________  
+  |    Chain Hash IMPLEMENTATION   | 
+  |________________________________| 
+Populating table: 115851[ms]
+Finding value within key 97: 2[ms]
+Deleting value within key 97: 1[ms]
