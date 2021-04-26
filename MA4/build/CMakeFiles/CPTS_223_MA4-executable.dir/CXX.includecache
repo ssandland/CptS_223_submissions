@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ss/MA4/Heap.h
+vector
+-
+stdexcept
+-
+math.h
+-
+string
+-
+iostream
+-
+stdio.h
+-
+
+/home/ss/MA4/OpenMP.h
+omp.h
+-
+stdio.h
+-
+stdlib.h
+-
+thread
+-
+iostream
+-
+cassert
+-
+algorithm
+-
+vector
+-
+
+/home/ss/MA4/main.cpp
+OpenMP.h
+/home/ss/MA4/OpenMP.h
+Heap.h
+/home/ss/MA4/Heap.h
+
