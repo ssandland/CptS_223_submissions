@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -fopenmp -g   CMakeFiles/CPTS_223_MA4-executable.dir/main.cpp.o  -o CPTS_223_MA4-executable 
